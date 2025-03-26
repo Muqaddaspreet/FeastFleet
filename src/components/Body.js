@@ -3,6 +3,7 @@ import resList from "../utils/mockData";
 import { useState } from "react";
 import { useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
@@ -74,7 +75,7 @@ const Body = () => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4
             );
-            setListOfRestaurant(filteredList);
+            setFilteredRestaurant(filteredList);
           }}
         >
           Top Rated restaurants
@@ -83,7 +84,12 @@ const Body = () => {
       <div className="res-container">
         {/*res-card-component*/}
         {filteredRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
         {console.log(filteredRestaurants)}
       </div>
