@@ -52,18 +52,19 @@ const Body = () => {
   ) : (
     <div className="body">
       {/* <div className="search">Search</div> */}
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex justify-center">
+        <div className="search my-4 p-4">
           <input
             type="text"
-            className="search-box"
+            placeholder="Search for restaurants"
+            className="px-4 py-1 border font-bold outline:none focus:outline-none border-gray-400 text-xl shadow-lg hover:scale-95"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
-            className="search-btn"
+            className=" border border-gray-400 px-4 py-2 text-xl font-bold m-4 rounded-4xl hover:bg-amber-300 shadow-lg cursor-pointer hover:scale-95 hover:text-amber-900 hover:border-0"
             onClick={() => {
               // Filter the restaurant cards and update the UI
               console.log(searchText);
@@ -73,24 +74,27 @@ const Body = () => {
                   .includes(searchText.toLowerCase());
               });
               setFilteredRestaurant(searchFiltered);
+              console.log(window);
             }}
           >
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4
-            );
-            setFilteredRestaurant(filteredList);
-          }}
-        >
-          Top Rated restaurants
-        </button>
+        <div className="search p-4 flex items-center">
+          <button
+            className="px-4 py-2 text-xl font-bold border border-gray-400 rounded-4xl hover:bg-amber-300 shadow-lg cursor-pointer hover:scale-95 hover:text-amber-900 hover:border-0"
+            onClick={() => {
+              const filteredList = listOfRestaurants.filter(
+                (res) => res.info.avgRating > 4
+              );
+              setFilteredRestaurant(filteredList);
+            }}
+          >
+            Top Rated restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="res-container flex flex-wrap justify-center">
         {/*res-card-component*/}
         {filteredRestaurants.map((restaurant) => (
           <Link

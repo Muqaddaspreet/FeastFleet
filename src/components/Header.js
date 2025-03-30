@@ -14,28 +14,32 @@ const Header = () => {
   }, [btnNameReact]);
 
   return (
-    <div className="header">
+    <div className="flex justify-between shadow-lg m-2">
       <div className="Logo-container">
-        <img className="logo" src={LOGO_URL} />
+        <Link to={"/"}>
+          <img className="w-56 m-1 hover:scale-[103%]" src={LOGO_URL} />
+        </Link>
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>online Status: {onlineStatus ? "✅" : "🔴"}</li>
-          <li>
-            <Link to="/">Home</Link>
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4 items-center">
+          <li className="px-4">Online Status: {onlineStatus ? "✅" : "🔴"}</li>
+          <li className="px-4 text-2xl font-bold hover:text-amber-800 cursor-pointer">
+            <Link to="/">🏠Home</Link>
           </li>
-          <li>
-            <Link to="/about">About Us</Link>
+          <li className="px-4 text-2xl font-bold hover:text-amber-800 cursor-pointer">
+            <Link to="/about">🪧About Us</Link>
           </li>
-          <li>
-            <Link to="/contact">Contact Us</Link>
+          <li className="px-4 text-2xl font-bold hover:text-amber-800 cursor-pointer">
+            <Link to="/contact">📞Contact Us</Link>
           </li>
-          <li>
+          <li className="px-4 text-2xl font-bold hover:text-amber-800 cursor-pointer">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>Cart</li>
+          <li className="px-4 text-2xl font-bold hover:text-amber-800 cursor-pointer">
+            🛒Cart
+          </li>
           <button
-            className="login"
+            className="login px-4 text-2xl font-bold hover:text-amber-800 cursor-pointer"
             onClick={() => {
               btnNameReact === "Login"
                 ? setBtnNameReact("Logout")
@@ -43,7 +47,7 @@ const Header = () => {
               console.log(btnNameReact);
             }}
           >
-            {btnNameReact}
+            🔐{btnNameReact}
           </button>
         </ul>
       </div>
