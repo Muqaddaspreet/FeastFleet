@@ -1,15 +1,17 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withNewlyOnboardedLabel } from "./RestaurantCard";
 import resList from "../utils/mockData";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
   const [filteredRestaurants, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardNewlyOnboarded = withNewlyOnboardedLabel(RestaurantCard);
 
   useEffect(() => {
     // console.log("UseEffect called");
@@ -46,6 +48,8 @@ const Body = () => {
         Looks like you are offline!! Please check your internet connection
       </h1>
     );
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
@@ -93,6 +97,16 @@ const Body = () => {
             Top Rated restaurants
           </button>
         </div>
+        <div className="search p-4 flex items-center">
+          <input
+            type="text"
+            placeholder="Enter Username"
+            className="px-4 py-1 border font-bold outline:none focus:outline-none border-gray-400 text-xl shadow-lg hover:scale-95"
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          />
+        </div>
       </div>
       <div className="res-container flex flex-wrap justify-center">
         {/*res-card-component*/}
@@ -101,7 +115,14 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {
+              /* If the restaurant is newly onboarded, then add a label to it. */
+              restaurant.info.isNewlyOnboarded ? (
+                <RestaurantCardNewlyOnboarded resData={restaurant} />
+              ) : (
+                <RestaurantCard resData={restaurant} />
+              )
+            }
           </Link>
         ))}
         {console.log(filteredRestaurants)}

@@ -13,7 +13,7 @@ const RestaurantCard = (props) => {
   } = resData?.info; // Optional chaining
   return (
     <div
-      className="m-4 p-4 w-[350px] rounded-lg shadow-lg hover:scale-95"
+      className="m-4 p-4 w-[350px] rounded-lg shadow-lg hover:scale-95 duration-200"
       // style={{ backgroundColor: "#f0f0f0" }}
     >
       <div className="h-56">
@@ -31,6 +31,22 @@ const RestaurantCard = (props) => {
       <h4 className="font-bold">{costForTwo}</h4>
     </div>
   );
+};
+
+// Higher Order Component
+export const withNewlyOnboardedLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div className="relative transition-transform duration-200 hover:scale-95">
+        <label className="absolute bg-black text-white m-4 p-2 rounded-lg z-20">
+          Newly Onboarded
+        </label>
+        <div className="pointer-events-none">
+          <RestaurantCard {...props} />
+        </div>
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;
