@@ -53,3 +53,11 @@
 - Client side routing: We are not making network calls as all the components are already loaded into our app. when we first visit the app it has all the data regarding other routes, so as soon as we click or go to some other route, our web application does not reload the whole page.
 
 - Server side routing: Clicking on anchor tag reloads the whole page, it sends the network call to like for example aboutUs.html page, And then render the html onto the web page.
+
+# Redux Toolkit:
+- instal @reduxjs/toolkit and react-redux
+- Build our store
+- connect our store to our app, i.e. Make a bridge
+- will create a slice (CartSlice) to add items to the cart.
+- Dispatch(action)
+- Read the data using Selector
