@@ -1,6 +1,12 @@
 import { act, fireEvent, render, screen } from "@testing-library/react";
 import RestaurantMenu from "../RestaurantMenu";
-import MOCK_DATA from "../mocks/mockResMenu.json";
+// import MOCK_DATA from "../mocks/mockResMenu.json";
+// 🚨 CHANGE STARTS
+let MOCK_DATA = null;
+if (process.env.NODE_ENV !== "production") {
+  MOCK_DATA = require("../mocks/mockResMenu.json");
+}
+// 🚨 CHANGE ENDS
 import "@testing-library/jest-dom";
 import appStore from "../../utils/appStore";
 import { Provider } from "react-redux";
@@ -8,13 +14,22 @@ import Header from "../Header";
 import { BrowserRouter } from "react-router-dom";
 import Cart from "../Cart";
 
-global.fetch = jest.fn(() => {
-  return Promise.resolve({
-    json: () => {
-      return Promise.resolve(MOCK_DATA);
-    },
+// global.fetch = jest.fn(() => {
+//   return Promise.resolve({
+//     json: () => {
+//       return Promise.resolve(MOCK_DATA);
+//     },
+//   });
+// });
+if (MOCK_DATA) {
+  global.fetch = jest.fn(() => {
+    return Promise.resolve({
+      json: () => {
+        return Promise.resolve(MOCK_DATA);
+      },
+    });
   });
-});
+}
 
 it("Should load my restaurant menu component", async () => {
   // await act(async () => {
