@@ -60,6 +60,7 @@ const Body = () => {
         <div className="search my-4 p-4">
           <input
             type="text"
+            data-testid="searchInput" // To find this input box by .getByTestId() for testing purposes.
             placeholder="Search for restaurants"
             className="px-4 py-1 border font-bold outline:none focus:outline-none border-gray-400 text-xl shadow-lg hover:scale-95"
             value={searchText}
@@ -71,14 +72,14 @@ const Body = () => {
             className=" border border-gray-400 px-4 py-2 text-xl font-bold m-4 rounded-4xl hover:bg-amber-300 shadow-lg cursor-pointer hover:scale-95 hover:text-amber-900 hover:border-0"
             onClick={() => {
               // Filter the restaurant cards and update the UI
-              console.log(searchText);
+              // console.log(searchText);
               const searchFiltered = listOfRestaurants.filter((res) => {
                 return res.info.name
                   .toLowerCase()
                   .includes(searchText.toLowerCase());
               });
               setFilteredRestaurant(searchFiltered);
-              console.log(window);
+              // console.log(window);
             }}
           >
             Search
@@ -125,7 +126,7 @@ const Body = () => {
             }
           </Link>
         ))}
-        {console.log(filteredRestaurants)}
+        {/* {console.log(filteredRestaurants)} */}
       </div>
     </div>
   );

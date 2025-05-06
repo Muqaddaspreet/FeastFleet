@@ -3,6 +3,7 @@ import { CDN_URL } from "../utils/constants";
 const RestaurantCard = (props) => {
   //   console.log(props);
   const { resData } = props;
+  // console.log(resData);
   const {
     cloudinaryImageId,
     name,
@@ -13,6 +14,7 @@ const RestaurantCard = (props) => {
   } = resData?.info; // Optional chaining
   return (
     <div
+      data-testid="resCard" // We give testid to be used for tesing inside .getByTestId() function.
       className="m-4 p-4 w-[350px] rounded-lg shadow-lg hover:scale-95 duration-200"
       // style={{ backgroundColor: "#f0f0f0" }}
     >

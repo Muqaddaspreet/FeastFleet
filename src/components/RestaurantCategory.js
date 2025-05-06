@@ -9,7 +9,7 @@ const RestaurantCategory = ({
 }) => {
   // const [showItems, setShowItems] = useState(false);
 
-  console.log(data);
+  // console.log(data);
   return (
     <div className="">
       {/* Header */}

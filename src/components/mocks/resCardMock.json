@@ -1,0 +1,75 @@
+{
+  "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+  "info": {
+    "id": "425225",
+    "name": "Amritsari kulcha 24/7",
+    "cloudinaryImageId": "sfjfrr7tlxxt9c3taf1y",
+    "locality": "B Block",
+    "areaName": "Ranjit Avenue",
+    "costForTwo": "₹200 for two",
+    "cuisines": ["North Indian", "Punjabi"],
+    "avgRating": 3.9,
+    "parentId": "236744",
+    "avgRatingString": "3.9",
+    "totalRatingsString": "355",
+    "sla": {
+      "deliveryTime": 41,
+      "lastMileTravel": 4.5,
+      "serviceability": "SERVICEABLE",
+      "slaString": "40-45 mins",
+      "lastMileTravelString": "4.5 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+      "nextCloseTime": "2025-05-03 06:59:00",
+      "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+      "entityBadges": {
+        "imageBased": {},
+        "textBased": {},
+        "textExtendedBadges": {}
+      }
+    },
+    "aggregatedDiscountInfoV3": {
+      "header": "₹100 OFF",
+      "subHeader": "ABOVE ₹199",
+      "discountTag": "FLAT DEAL"
+    },
+    "orderabilityCommunication": {
+      "title": {},
+      "subTitle": {},
+      "message": {},
+      "customIcon": {}
+    },
+    "differentiatedUi": {
+      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      "differentiatedUiMediaDetails": {
+        "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+        "lottie": {},
+        "video": {}
+      }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {},
+    "externalRatings": {
+      "aggregatedRating": {
+        "rating": "--"
+      }
+    },
+    "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+  },
+  "analytics": {
+    "context": "seo-data-1b7d1075-c0e3-4f02-860b-517c319d8f07"
+  },
+  "cta": {
+    "link": "https://www.swiggy.com/city/amritsar/amritsari-kulcha-24-7-b-block-ranjit-avenue-rest425225",
+    "text": "RESTAURANT_MENU",
+    "type": "WEBLINK"
+  },
+  "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+}

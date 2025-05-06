@@ -55,9 +55,27 @@
 - Server side routing: Clicking on anchor tag reloads the whole page, it sends the network call to like for example aboutUs.html page, And then render the html onto the web page.
 
 # Redux Toolkit:
+
 - instal @reduxjs/toolkit and react-redux
 - Build our store
 - connect our store to our app, i.e. Make a bridge
 - will create a slice (CartSlice) to add items to the cart.
 - Dispatch(action)
 - Read the data using Selector
+
+# Types of testing (developer):
+
+- Unit Testing
+- Integration Testing
+- End to End Testing - e2e testing
+
+# Setting up Testing in our application:
+
+- Install React Testing Library
+- Installed jest
+- Install Babel dependencies
+- Configure Babel
+- Configure Parcel Config file to disable default babel transpilation.
+- Jest configuration
+- Install @babel/preset-react - to mke jsx work in test cases.
+- Include uration @babel/preset-react inside my babel config.
