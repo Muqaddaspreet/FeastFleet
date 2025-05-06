@@ -1,17 +1,31 @@
 import { act, fireEvent, render, screen } from "@testing-library/react";
 import Body from "../Body";
-import MOCK_DATA from "../mocks/mockResListData.json";
+// import MOCK_DATA from "../mocks/mockResListData.json";
+let MOCK_DATA = null;
+if (process.env.NODE_ENV !== "production") {
+  MOCK_DATA = require("../mocks/mockResListData.json");
+}
 import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 
-global.fetch = jest.fn(() => {
-  // You’re telling Jest: “When fetch is called, it should run the function inside here.”
-  return Promise.resolve({
-    json: () => {
-      return Promise.resolve(MOCK_DATA);
-    },
+// global.fetch = jest.fn(() => {
+//   // You’re telling Jest: “When fetch is called, it should run the function inside here.”
+//   return Promise.resolve({
+//     json: () => {
+//       return Promise.resolve(MOCK_DATA);
+//     },
+//   });
+// });
+
+if (MOCK_DATA) {
+  global.fetch = jest.fn(() => {
+    return Promise.resolve({
+      json: () => {
+        return Promise.resolve(MOCK_DATA);
+      },
+    });
   });
-});
+}
 
 it("should render the body component with search button and Search res List for 'burger' text input ", async () => {
   await act(async () => {
