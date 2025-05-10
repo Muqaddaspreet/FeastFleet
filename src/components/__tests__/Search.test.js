@@ -2,7 +2,7 @@ import { act, fireEvent, render, screen } from "@testing-library/react";
 import Body from "../Body";
 // import MOCK_DATA from "../mocks/mockResListData.json";
 let MOCK_DATA = null;
-if (process.env.NODE_ENV !== "production") {
+if (process?.env?.NODE_ENV !== "production") {
   MOCK_DATA = require("../mocks/mockResListData.json");
 }
 import { BrowserRouter } from "react-router-dom";

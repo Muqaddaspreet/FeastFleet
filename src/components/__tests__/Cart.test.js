@@ -3,7 +3,7 @@ import RestaurantMenu from "../RestaurantMenu";
 // import MOCK_DATA from "../mocks/mockResMenu.json";
 // 🚨 CHANGE STARTS
 let MOCK_DATA = null;
-if (process.env.NODE_ENV !== "production") {
+if (process?.env?.NODE_ENV !== "production") {
   MOCK_DATA = require("../mocks/mockResMenu.json");
 }
 // 🚨 CHANGE ENDS

@@ -3,7 +3,7 @@ import RestaurantCard from "../RestaurantCard";
 // import MOCK_DATA from "../mocks/resCardMock.json";
 import "@testing-library/jest-dom";
 let MOCK_DATA = null;
-if (process.env.NODE_ENV !== "production") {
+if (process?.env?.NODE_ENV !== "production") {
   MOCK_DATA = require("../mocks/resCardMock.json");
 }
 
