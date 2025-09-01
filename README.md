@@ -1,81 +1,66 @@
-# FeastFleet - Food Ordering Application 🚀
+# 🍽️ FeastFleet - Food Ordering Application 🚀
 
-# Parcel
+FeastFleet is a **responsive food-ordering web app** built with **React** and **Redux Toolkit**, offering a smooth and modern UX for browsing restaurants, managing carts, and placing orders. It integrates **REST APIs** for live menu data and optimizes performance with client-side caching, debounced search, and accessibility best practices.
 
-- Dev Build
-- Local Server
-- HMR = Hot Module Replacement
-- File Watching Algorithm
-- Caching - Faster Builds
-- Image Optimization
-- Minification
-- Bundling
-- Compressing
-- consistent hashing
-- code splitting
-- differential bundling - support older browsers
-- Diagnostic
-- Error Handling
-- HTTPs
-- Tree Shaking - removes unused files
-- Different Devon production bundles
+---
 
-# Food Ordering App
+## ✨ Features
 
-/\*\*
+- **Real-time Menu Updates**: Fetches live restaurant and menu data via REST APIs with caching and prefetch.
+- **Search & Filters**: Debounced search bar with cuisine/category filters to minimize redundant network calls.
+- **Persistent Cart**: Item modifiers, order review, optimistic updates, and retry logic for reliable cart management.
+- **Performance & Accessibility**: Fully responsive with Tailwind CSS; Lighthouse-tuned for a11y and performance.
+- **Testing & CI/CD**: Unit + integration tests with Jest & React Testing Library, CI checks on every PR.
 
-- Header
-- - Logo
-- - Nav Item
-- Body
-- - Search
-- - RestaurantContainer
-- - RestaurantCard
-- - Img
--     - Name of res, cuisine, star rating, deliver time.
--     -
-- Footer
-- - Copyright
-- - Links
-- - Address
-- - Contact
-    \*/
+---
 
-# React Hooks
+## 🛠️ Tech Stack
 
-(Normal JS utility functions)
+- **Frontend**: React, Redux Toolkit, React Router, Tailwind CSS
+- **Build Tool**: Parcel (HMR, Code Splitting, Tree Shaking, Minification, Differential Bundling)
+- **Testing**: Jest, React Testing Library
+- **Version Control & CI/CD**: Git, GitHub Actions
 
-- useState() - Superpowerful state variables in React
-- useEffect() -
+---
 
-# Routing in web apps:
 
-- Client side routing: We are not making network calls as all the components are already loaded into our app. when we first visit the app it has all the data regarding other routes, so as soon as we click or go to some other route, our web application does not reload the whole page.
+---
 
-- Server side routing: Clicking on anchor tag reloads the whole page, it sends the network call to like for example aboutUs.html page, And then render the html onto the web page.
+## 🧩 Key Concepts Implemented
 
-# Redux Toolkit:
+- **React Hooks**: `useState`, `useEffect` for managing component state and lifecycle.
+- **Client-side Routing**: Smooth navigation with React Router (no full-page reloads).
+- **Redux Toolkit**: Centralized store, slices (e.g., `CartSlice`), actions & selectors.
+- **Optimizations**: Image optimization, caching, bundling, and differential builds.
+- **Testing Strategy**:
+  - Unit Testing
+  - Integration Testing
+  - End-to-End (E2E) Testing (planned)
 
-- instal @reduxjs/toolkit and react-redux
-- Build our store
-- connect our store to our app, i.e. Make a bridge
-- will create a slice (CartSlice) to add items to the cart.
-- Dispatch(action)
-- Read the data using Selector
+---
 
-# Types of testing (developer):
+## ⚡ Performance Optimizations
 
-- Unit Testing
-- Integration Testing
-- End to End Testing - e2e testing
+- Hot Module Replacement (HMR)
+- File Watching Algorithm for fast rebuilds
+- Consistent hashing for long-term caching
+- Code splitting & tree shaking
+- Differential bundling for legacy browser support
+- Error diagnostics & HTTPS-ready builds
 
-# Setting up Testing in our application:
+---
 
-- Install React Testing Library
-- Installed jest
-- Install Babel dependencies
-- Configure Babel
-- Configure Parcel Config file to disable default babel transpilation.
-- Jest configuration
-- Install @babel/preset-react - to mke jsx work in test cases.
-- Include uration @babel/preset-react inside my babel config.
+## 🧑‍💻 Skills Highlighted
+
+- Unit Testing · Integration Testing · Frontend Optimization  
+- Jest · React Testing Library · Redux.js · Functional Programming  
+- React Router · Web Performance · Tailwind CSS · Git · HTML5
+
+---
+
+## 🔗 Links
+
+- **GitHub Repo**: [FeastFleet Repository](https://github.com/MUQADDASPREET/FeastFleet)  
+- **Live Demo**: [feastfleet.netlify.app](https://feastfleet.netlify.app/)
+
+---
