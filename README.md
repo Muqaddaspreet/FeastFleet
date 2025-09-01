@@ -59,6 +59,6 @@ FeastFleet is a **responsive food-ordering web app** built with **React** and **
 ---
 
 ## 🔗 Links
-- **Live Demo**: [feastfleet.netlify.app](https://feast-fleet.netlify.app/)
+- **Live Demo**: [feast-fleet.netlify.app](https://feast-fleet.netlify.app/)
 
 ---
